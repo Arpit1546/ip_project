@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gym Membership Details</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="bg-gray-900 shadow-lg relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex-shrink-0">
+                    <a href="#">
+                        <img src="logo.png" alt="Gym Logo" class="h-8">
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Home</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Services</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Membership Details</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">User Profile</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Nutrition</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Reviews</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="mobileMenu" class="md:hidden bg-gray-900 absolute top-0 left-0 w-full z-20 hidden">
+        <ul class="flex flex-col space-y-4">
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Home</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Services</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Membership Details</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">User Profile</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Nutrition</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Reviews</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Contact Us</a></li>
+        </ul>
+    </div>
+  <main>
+    <section class="membership-details">
+      <h1>Join Our Gym Today!</h1>
+      <p>Get fit and healthy with our flexible membership plans.</p>
+      <div class="membership-plans">
+        <div class="plan monthly" data-duration="1" data-price="20">
+          <h2>Monthly</h2>
+          <p>$20 per month</p>
+          <button class="select-plan">Select</button>
+        </div>
+        <div class="plan six-months" data-duration="6" data-price="100">
+          <h2>6 Months</h2>
+          <p>$100 for 6 months</p>
+          <button class="select-plan">Select</button>
+        </div>
+        <div class="plan yearly" data-duration="12" data-price="180">
+          <h2>Yearly</h2>
+          <p>$180 per year</p>
+          <button class="select-plan">Select</button>
+        </div>
+      </div>
+    </section>
+    <section class="benefits">
+      <h2>Membership Benefits</h2>
+      <ul>
+        <li>
+<i class="fas fa-dumbbell"></i>
+          <h3>Access to Gym Equipment</h3>
+          <p>Our gym is equipped with the latest fitness machines and free weights.</p>
+        </li>
+        <li>
+          <i class="fas fa-users"></i>
+          <h3>Group Classes</h3>
+          <p>Join our group classes and get fit with others.</p>
+        </li>
+        <li>
+          <i class="fas fa-running"></i>
+          <h3>Personal Training</h3>
+          <p>Get personalized training from our experienced trainers.</p>
+        </li>
+        <li>
+          <i class="fas fa-tshirt"></i>
+          <h3>Free Gym Shirt</h3>
+          <p>Get a free gym shirt with your membership.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

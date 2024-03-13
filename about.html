@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="aboutstyle.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="bg-gray-900 shadow-lg relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex-shrink-0">
+                    <a href="#">
+                        <img src="logo.png" alt="Gym Logo" class="h-8">
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Home</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Services</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Membership Details</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">User Profile</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Nutrition</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Reviews</a></li>
+                        <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="mobileMenu" class="md:hidden bg-gray-900 absolute top-0 left-0 w-full z-20 hidden">
+        <ul class="flex flex-col space-y-4">
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Home</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Services</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Membership Details</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">User Profile</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Nutrition</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Reviews</a></li>
+            <li><a href="#" class="text-white hover:text-gray-300 transition duration-300">Contact Us</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <div id="about-main">
+            <img src="i1.jpeg" alt="i1">
+            <div id="info">
+                <h3>ABOUT US</h3>
+                <p>At our gym, we're more than just a fitness center—we're a community dedicated to transforming lives. With state-of-the-art equipment, expert trainers, and dynamic classes, we empower you to reach your health goals. Whether you're a beginner or a seasoned athlete, our supportive environment fosters growth and achievement. From personalized workout plans to nutritional guidance, we're here every step of the way.</div>
+            <img src="i5.png" alt="i2">
+
+
+        </div>
+        <div id="aboutp2">
+            <div id="c1" class="ab-box">
+                <div class="ctext">
+                    <h4>EQUIPMENTS</h4>
+                    <p> Our gym boasts state-of-the-art machines, from treadmills to weight benches, ensuring a comprehensive workout experience for all members.</p>
+                </div>
+            </div>
+            <div id="c2" class="ab-box">
+                <div class="ctext">
+                    <h4>ACHIEVEMENTS</h4>
+                    <p>Our gym takes pride in its community, celebrating members' weight loss, muscle gains, and personal fitness milestones.</p>
+                </div>
+            </div>
+            <div id="c3" class="ab-box">
+                <div class="ctext">
+                    <h4>BRANCHES </h4>
+                    <p> With multiple locations across the city, our gym makes fitness accessible and convenient for everyone, no matter where you live.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
