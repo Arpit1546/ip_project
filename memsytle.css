@@ -111,7 +111,6 @@
   }
   
   .benefits {
-    background-color: #111827;
     padding: 5rem 0;
     text-align: center;
     display: flex;
@@ -121,7 +120,8 @@
   
   .benefits h2 {
     font-size: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
+    padding-bottom: 3rem;
     animation: fadeIn 1s ease-in-out both;
   }
   

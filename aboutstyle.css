@@ -72,15 +72,15 @@
 }
 
 #c1 {
-    background-image: url(i2.gif);
+    background-image: url(./media/i2.gif);
 }
 
 #c2 {
-    background-image: url(i3.gif);
+    background-image: url(./media/i3.gif);
 }
 
 #c3 {
-    background-image: url(i4.gif);
+    background-image: url(./media/i4.gif);
 }
 
 .ctext {
