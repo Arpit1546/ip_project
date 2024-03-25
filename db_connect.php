@@ -3,7 +3,7 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$database = "fithub";
+$database = "fithub1";
 
 // Establishing a connection to the database
 $conn = mysqli_connect( $host, $username, $password, $database);

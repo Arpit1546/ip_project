@@ -1,176 +1,67 @@
-<?php
-session_start();
-include('db_connect.php');
+<?php 
+      session_start();
 
-if (1) {
-    // Retrieve username and password from the login form
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+      include("db_connect.php");
 
-    // Query to check if the username exists in the database
-    $query = "SELECT * FROM login_info WHERE username = '$username'";
-    $result = mysqli_query($conn, $query);
+      if($_SERVER['REQUEST_METHOD'] == "POST") {
+    
+        $username = $_POST['user'];
+        $password = $_POST['pass'];
 
-    if (mysqli_num_rows($result) > 0) {
-        // Fetch the user data
-        $user = mysqli_fetch_assoc($result);
-        // Verify the password
-        if (password_verify($password, $user['password'])) {
-            // Password is correct, start a new session
-            $_SESSION['user_id'] = $user['user_id'];
-            // Redirect to home.html upon successful login
-            header("Location: home.html");
-            exit();
-        } else {
-            $error = "Invalid password";
-        }
-    } else {
-        $error = "User not found";
+        if(!empty($username) && !empty($password) && !empty($username) && !is_numeric($email)) {
+            $query = "select * from users where user = '$username' limit 1";
+            $result = mysqli_query($conn , $query);
+
+            if($result) {
+              if($result && mysqli_num_rows($result)>0) {
+                $user_data = mysqli_fetch_assoc($result);
+
+                if($user_data['pass'] == $password){
+                  header("location: home.php");
+                }
+              }
+            }
+            echo "<script type='text/javascript'> alert('incorrect username/password!')</script>";
+
+      }
+      else {
+        echo "<script type='text/javascript'> alert('incorrect username/password!')</script>";
+
+      }
     }
-}
+
+
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login to fithub</title>
+  <link rel="stylesheet" href="login.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
-    <link rel="stylesheet" href="login.css">
-    <title>FitHub | Login/Register</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
- <div class="wrapper">
-    <nav class="nav">
-        <div class="nav-logo">
-            <p>LOGO .</p>
-        </div>
-        <div class="nav-menu" id="navMenu">
-            <ul>
-                <li><a href="#" class="link active">Home</a></li>
-                <li><a href="about.html" class="link">About</a></li>
-            </ul>
-        </div>
-        <div class="nav-button">
-            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
-            <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
-        </div>
-        <div class="nav-menu-btn">
-            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-        </div>
-    </nav>
-
-    <div class="form-box">
-        
-
-
-        <div class="login-container" id="login">
-            <div class="top">
-                <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
-                <header>Login</header>
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="Username or Email">
-                <i class="bx bx-user"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <input type="submit" class="submit" value="Sign In">
-            </div>
-            <div class="two-col">
-                <div class="one">
-                    <input type="checkbox" id="login-check">
-                    <label for="login-check"> Remember Me</label>
-                </div>
-                <div class="two">
-                    <label><a href="#">Forgot password?</a></label>
-                </div>
-            </div>
-        </div>
-
-        <div class="register-container" id="register">
-            <div class="top">
-                <span>Have an account? <a href="#" onclick="login()">Login</a></span>
-                <header>Sign Up</header>
-            </div>
-            <div class="two-forms">
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="username">
-                    <i class="bx bx-user"></i>
-                </div>
-                
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="Email">
-                <i class="bx bx-envelope"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <input type="submit" class="submit" value="Register">
-            </div>
-            <div class="two-col">
-                <div class="one">
-                    <input type="checkbox" id="register-check">
-                    <label for="register-check"> Remember Me</label>
-                </div>
-                <div class="two">
-                    <label><a href="#">Terms & conditions</a></label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>   
-
-
-<script>
-   
-   function myMenuFunction() {
-    var i = document.getElementById("navMenu");
-
-    if(i.className === "nav-menu") {
-        i.className += " responsive";
-    } else {
-        i.className = "nav-menu";
-    }
-   }
- 
-</script>
-
-<script>
-
-    var a = document.getElementById("loginBtn");
-    var b = document.getElementById("registerBtn");
-    var x = document.getElementById("login");
-    var y = document.getElementById("register");
-
-    function login() {
-        x.style.left = "4px";
-        y.style.right = "-520px";
-        a.className += " white-btn";
-        b.className = "btn";
-        x.style.opacity = 1;
-        y.style.opacity = 0;
-    }
-
-    function register() {
-        x.style.left = "-510px";
-        y.style.right = "5px";
-        a.className = "btn";
-        b.className += " white-btn";
-        x.style.opacity = 0;
-        y.style.opacity = 1;
-    }
-
-</script>
-
+  <div class="wrapper">
+    <form action="login.php" method="POST">
+      <h1>Login</h1>
+      <div class="input-box">
+        <input type="text" name="user" placeholder="Username" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" name="pass" placeholder="Password" required>
+        <i class='bx bxs-lock-alt' ></i>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="register-link">
+        <p>Dont have an account? <a href="reg.php">Register</a></p>
+      </div>
+    </form>
+  </div>
 </body>
 </html>

@@ -1,4 +1,31 @@
-<!DOCTYPE html>
+<?php 
+  session_start();
+
+  include("db_connect.php");
+
+  if($_SERVER['REQUEST_METHOD'] == "POST") {
+    
+    $username = $_POST['user'];
+    $email = $_POST['email'];
+    $password = $_POST['pass'];
+    
+    if(!empty($username) && !empty($password) && !empty($username) && !is_numeric($email)) {
+      $query = "insert into users (user, email, pass) values ('$username', '$email', '$password')";
+
+      mysqli_query($conn, $query);
+
+      echo "<script type='text/javascript'> alert('Registration successfull')</script>";
+    }
+    else {
+      echo "<script type='text/javascript'> alert('Enter valid credentials')</script>";
+
+    }
+    
+
+  }
+
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +38,7 @@
 </head>
 <body>
   <div class="wrapper">
-    <form action="">
+    <form method="POST">
       <h1>Register</h1>
       <div class="input-box">
         <input type="text" placeholder="Username" name="user" required>
@@ -30,7 +57,7 @@
       
       <button type="submit" class="btn">Login</button>
       <div class="register-link">
-        <p>Already have an account? <a href="login.html">Login now!</a></p>
+        <p>Already have an account? <a href="login.php">Login now!</a></p>
       </div>
     </form>
   </div>
