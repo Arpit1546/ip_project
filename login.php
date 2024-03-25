@@ -1,38 +1,37 @@
 <?php 
-      session_start();
+session_start();
 
-      include("db_connect.php");
+include("db_connect.php");
 
-      if($_SERVER['REQUEST_METHOD'] == "POST") {
+if($_SERVER['REQUEST_METHOD'] == "POST") {
     
-        $username = $_POST['user'];
-        $password = $_POST['pass'];
+    $username = $_POST['user'];
+    $password = $_POST['pass'];
 
-        if(!empty($username) && !empty($password) && !empty($username) && !is_numeric($email)) {
-            $query = "select * from users where user = '$username' limit 1";
-            $result = mysqli_query($conn , $query);
+    $query = "SELECT * FROM users WHERE user = '$username' LIMIT 1";
+    $result = mysqli_query($conn , $query);
 
-            if($result) {
-              if($result && mysqli_num_rows($result)>0) {
-                $user_data = mysqli_fetch_assoc($result);
-
-                if($user_data['pass'] == $password){
-                  header("location: home.php");
-                }
-              }
+    if($result) {
+        if(mysqli_num_rows($result) > 0) {
+            $user_data = mysqli_fetch_assoc($result);
+            if($user_data['pass'] == $password){
+                $_SESSION['user_id'] = $user_data['id'];
+                $_SESSION['username'] = $user_data['user'];
+                $_SESSION['name'] = $user_data['name'];
+                $_SESSION['email'] = $user_data['email'];
+                header("location: home.php");
+            } else {
+                echo "<script type='text/javascript'> alert('Incorrect username/password!')</script>";
             }
-            echo "<script type='text/javascript'> alert('incorrect username/password!')</script>";
-
-      }
-      else {
-        echo "<script type='text/javascript'> alert('incorrect username/password!')</script>";
-
-      }
+        } else {
+            echo "<script type='text/javascript'> alert('User does not exist!')</script>";
+        }
+    } else {
+        echo "<script type='text/javascript'> alert('Error fetching user data!')</script>";
     }
-
-
-
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

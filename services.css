@@ -1,0 +1,225 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    background-color: #111827;
+    color: #fff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+nav {
+    padding: 2vw 0vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    justify-content: space-between;
+}
+
+#navright {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+#navright h4 {
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    font-weight: 500;
+    color: #fff;
+    transition: all ease 0.4s;
+    position: relative;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+
+
+#navright h4 a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+}
+
+
+nav h3 {
+    display: none;
+}
+
+#info {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    padding: 0;
+    
+}
+
+.elem {
+    height: 150px;
+    width: 100%;
+    position: relative;
+
+    border-bottom: 1px solid #38383864;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+}
+
+.elem h2 {
+    font-size: 3vw;
+    position: relative;
+    z-index: 9;
+    background-color: transparent;
+
+
+}
+
+
+.elem .overlay {
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    transition: all ease 0.25s;
+}
+
+.elem .paragraph {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 10;
+}
+
+.elem:hover .overlay {
+    top: 0;
+}
+
+#fix-div {
+    height: 30vw;
+    width: 45vw;
+    border-radius: 15px;
+    background-color: #f70037;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    top: 25%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#fix-div p {
+    padding: 2vh;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0;
+    background-color: #f70037;
+  }
+
+.main-footer {
+    padding: 5vh 0;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #fff;
+  }
+  
+  .main-footer ul {
+    list-style: none;
+  }
+  
+  .main-footer h1 {
+    font-size: 3vh;
+    line-height: 117%;
+    color: #111827;
+    margin-bottom: 1.5vh;
+    font-weight: 500;
+  }
+  
+  .main-footer h2 {
+    color: #111827;
+    font-weight: 500;
+  }
+  
+  .main-footer ul li a {
+    color: #111827cc;
+    text-decoration:none;
+  }
+  
+  footer {
+    background-color: #fff;
+    border-top: 0.1vh solid #6EB981;
+    font-size: 2vh;
+    padding: 2vh 0.5vh;
+    color: #111827;
+    text-align: center;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: #111827;
+  }
+  
+  .logoinfo p {
+    color: #6EB981;
+    font-size: 2vh;
+    margin-top: 0.5vh;
+  }
+  
+  .contact-details {
+    margin-top: 3vh;
+  }
+  
+  .contact-details li {
+    list-style: none;
+    margin: 1.5vh 0;
+  }
+  
+  .contact-details li a {
+    text-decoration:none;
+    color: #111827;
+  }
+  
+  .contact-details .fa {
+    color: #111827;
+    margin-right: 1vh;
+  }
+  
+  .sociallogos{
+    padding:1.2vh 0;
+  }
+  
+  .sociallogos .logobox a{
+    padding:0 10px;
+    text-decoration:none;
+    color:#111827;
+    font-size :3.5vh;
+  }
+  
+  .com ul li{
+    padding:0.5vh 0;
+  }
+
+

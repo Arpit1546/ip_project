@@ -1,9 +1,7 @@
 <?php 
- include("db_connect.php");
-
-
+include("db_connect.php");
+session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,18 +22,6 @@
 
         <ul>
             <li>
-                <a href="#message">
-                    <span class="icon-count">29</span>
-                    <i class="fa fa-envelope fa-2x"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#notification">
-                    <span class="icon-count">59</span>
-                    <i class="fa fa-bell fa-2x"></i>
-                </a>
-            </li>
-            <li>
                 <a href="login.php">
                     <i class="fa fa-sign-out-alt fa-2x"></i>
                 </a>
@@ -45,22 +31,10 @@
 
     <div class="sidenav">
         <div class="profile">
-            <img src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png" alt="" width="100" height="100">
-
+            <img src="./media/prof.gif" alt="" width="100" height="100">
             <div class="name">
-                ImDezCode
+                <?php echo $_SESSION['name']; ?>
             </div>
-            <div class="job">
-                Web Developer
-            </div>
-        </div>
-
-        <div class="sidenav-url">
-            <div class="url">
-                <a href="#profile" class="active">Profile</a>
-                <hr align="center">
-            </div>
-           
         </div>
     </div>
 
@@ -68,38 +42,22 @@
         <h2>IDENTITY</h2>
         <div class="card">
             <div class="card-body">
-                <i class="fa fa-pen fa-xs edit"></i>
                 <table>
                     <tbody>
                         <tr>
                             <td>Name</td>
                             <td>:</td>
-                            <td>ImDezCode</td>
+                            <td><?php echo $_SESSION['name']; ?></td>
+                        </tr>
+                        <tr>
+                            <td>Username</td>
+                            <td>:</td>
+                            <td><?php echo $_SESSION['username']; ?></td>
                         </tr>
                         <tr>
                             <td>Email</td>
                             <td>:</td>
-                            <td>imdezcode@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Address</td>
-                            <td>:</td>
-                            <td>Bali, Indonesia</td>
-                        </tr>
-                        <tr>
-                            <td>Hobbies</td>
-                            <td>:</td>
-                            <td>Diving, Reading Book</td>
-                        </tr>
-                        <tr>
-                            <td>Job</td>
-                            <td>:</td>
-                            <td>Web Developer</td>
-                        </tr>
-                        <tr>
-                            <td>Skill</td>
-                            <td>:</td>
-                            <td>PHP, HTML, CSS, Java</td>
+                            <td><?php echo $_SESSION['email']; ?></td>
                         </tr>
                     </tbody>
                 </table>
@@ -109,9 +67,8 @@
         <h2>SOCIAL MEDIA</h2>
         <div class="card">
             <div class="card-body">
-                <i class="fa fa-pen fa-xs edit"></i>
                 <div class="social-media">
-                    <span class="fa-stack fa-sm">
+                <span class="fa-stack fa-sm">
                         <i class="fas fa-circle fa-stack-2x"></i>
                         <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
                     </span>
@@ -138,8 +95,7 @@
                     <span class="fa-stack fa-sm">
                         <i class="fas fa-circle fa-stack-2x"></i>
                         <i class="fab fa-snapchat fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
+                    </span>                </div>
             </div>
         </div>
     </div>
