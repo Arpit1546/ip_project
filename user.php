@@ -68,10 +68,6 @@ session_start();
         <div class="card">
             <div class="card-body">
                 <div class="social-media">
-                <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
                     <span class="fa-stack fa-sm">
                         <i class="fas fa-circle fa-stack-2x"></i>
                         <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
@@ -88,14 +84,8 @@ session_start();
                         <i class="fas fa-circle fa-stack-2x"></i>
                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>
                     </span>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
                     </span>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-snapchat fa-stack-1x fa-inverse"></i>
-                    </span>                </div>
+                </div>
             </div>
         </div>
     </div>

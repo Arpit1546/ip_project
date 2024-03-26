@@ -87,6 +87,7 @@ nav h3 {
 }
 
 
+
 .elem .overlay {
     height: 100%;
     width: 100%;
@@ -138,88 +139,4 @@ nav h3 {
     margin: 0;
     background-color: #f70037;
   }
-
-.main-footer {
-    padding: 5vh 0;
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #fff;
-  }
-  
-  .main-footer ul {
-    list-style: none;
-  }
-  
-  .main-footer h1 {
-    font-size: 3vh;
-    line-height: 117%;
-    color: #111827;
-    margin-bottom: 1.5vh;
-    font-weight: 500;
-  }
-  
-  .main-footer h2 {
-    color: #111827;
-    font-weight: 500;
-  }
-  
-  .main-footer ul li a {
-    color: #111827cc;
-    text-decoration:none;
-  }
-  
-  footer {
-    background-color: #fff;
-    border-top: 0.1vh solid #6EB981;
-    font-size: 2vh;
-    padding: 2vh 0.5vh;
-    color: #111827;
-    text-align: center;
-  }
-  
-  footer a {
-    text-decoration: none;
-    color: #111827;
-  }
-  
-  .logoinfo p {
-    color: #6EB981;
-    font-size: 2vh;
-    margin-top: 0.5vh;
-  }
-  
-  .contact-details {
-    margin-top: 3vh;
-  }
-  
-  .contact-details li {
-    list-style: none;
-    margin: 1.5vh 0;
-  }
-  
-  .contact-details li a {
-    text-decoration:none;
-    color: #111827;
-  }
-  
-  .contact-details .fa {
-    color: #111827;
-    margin-right: 1vh;
-  }
-  
-  .sociallogos{
-    padding:1.2vh 0;
-  }
-  
-  .sociallogos .logobox a{
-    padding:0 10px;
-    text-decoration:none;
-    color:#111827;
-    font-size :3.5vh;
-  }
-  
-  .com ul li{
-    padding:0.5vh 0;
-  }
-
 
