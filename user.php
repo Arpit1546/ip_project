@@ -8,7 +8,6 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-
     <link rel="stylesheet" href="user.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
@@ -21,6 +20,11 @@ session_start();
         </div>
 
         <ul>
+            <li>
+                <a href="home.php">
+                    Home
+                </a>
+            </li>
             <li>
                 <a href="login.php">
                     <i class="fa fa-sign-out-alt fa-2x"></i>
